@@ -104,6 +104,10 @@ p {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--header-menu-color);
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-menu:hover,
@@ -155,6 +159,10 @@ p {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--color-address);
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-li:hover,
@@ -212,6 +220,10 @@ p {
     letter-spacing: 0.04em;
     color: #FFFFFF;
     cursor: pointer;
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -346,6 +358,10 @@ p {
 
     background-color: var(--icon-color-footer);
     border-radius: 50%;
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
@@ -354,7 +370,7 @@ p {
 }
 
 .social-icon {
-    fill: var(--footer-color-logo)
+    fill: var(--footer-color-logo);
 }
 
 
@@ -384,6 +400,10 @@ p {
 
     border: 1px solid #8E8F99;
     border-radius: 4px;
+
+    transition-property: border-color, color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .comp-list:hover,
@@ -426,6 +446,10 @@ p {
     color: var(--main-color-logo);
     background-color: var(--footer-color-logo);
     cursor: pointer;
+
+    transition-property: color, background-color, border, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .li-portf {
@@ -453,11 +477,38 @@ p {
 
 .linc-portfolio {
     display: block;
+
+    transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portf-img {
     position: relative;
+
+    overflow: hidden;
 }
+
+.overlay-portfolio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: #4D5AE5;
+
+    transform: translateY(100%);
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.portf-img:hover .overlay-portfolio {
+    transform: translateY(0);
+}
+
 
 .hover-text-portf {
     position: absolute;
@@ -473,6 +524,8 @@ p {
     letter-spacing: 0.02em;
     color: var(--footer-color-logo);
 }
+
+
 
 .linc-portfolio:hover,
 .linc-portfolio:focus {
@@ -556,6 +609,10 @@ color: #FFFFFF;
     height: 100%;
     background-color: var(--main-color-logo);
     border-radius: 50%;
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link-footer:hover,
@@ -565,25 +622,70 @@ color: #FFFFFF;
 
 /*Modal styles*/
 .bacdrop {
+    
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
 
 }
 
+.bacdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
 .modal-window {
     position: absolute;
-    width: 408px;
-    height: 576px;
-    left: 516px;
-    top: 88px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 408px;
+    min-height: 576px;
+    
+    
+    
     background: #FCFCFC;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 }
 .modal-button {
-    width: 20px;
-    height: 20px;
+    position: absolute;
+    top: 24px;
+    left: 360px;
+ 
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 24px;
+    height: 24px;
+    background-color: #E7E9FC;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
 }
+
+.close-window-icon {
+    fill: #2E2F42;
+}
+
+.modal-button:active {
+
+    background-color: #404BBF;
+    border: #404BBF;
+    border-radius: 50%;
+
+}
+
+.modal-button:active .close-window-icon {
+    fill:#FFFFFF;  
+}
+
+
+
+
+
+ 

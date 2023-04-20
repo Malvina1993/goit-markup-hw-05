@@ -52,7 +52,7 @@
             <div class="container">
                 <h1 class="hero-text">Effective Solutions for Your Business</h1>
                     
-                <button type="button" class="hero-btn">Order Service</button>
+                <button type="button" class="hero-btn" data-modal-open>Order Service</button>
             </div>
         </section>
 
@@ -405,14 +405,17 @@
 
     </footer>
 
-    <div class="bacdrop">
+    <div class="bacdrop is-hidden" data-modal>
         <div class="modal-window">
-            <button class="modal-button" tupe="button">
-                <svg>
-                    <use></use>
+            <button class="modal-button" tupe="button" data-modal-close>
+                <svg class="close-window-icon" width="8" height="8">
+                    <use href="./images/icons.svg#icon-close"></use>
                 </svg>
             </button>
         </div>
     </div>
+
+    <script src="./js/modal.js"></script>
+
 </body>
 </html>
